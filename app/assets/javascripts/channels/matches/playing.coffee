@@ -13,7 +13,7 @@ App.matches/playing = App.cable.subscriptions.create {
 
   received: (data) ->
     $('#game-board-drop-bombs').load data.render_url, ->
-      myPlays = $('#my-plays').find('.check-my-plays')
+      myPlays = $('#my-plays').find('img')
       console.log(myPlays.length)
       i = 0
       while i < myPlays.length
@@ -24,7 +24,7 @@ App.matches/playing = App.cable.subscriptions.create {
         $(myPlays[i]).offset offsetCell
         i++
 
-      challengerPlays = $('#challenger-plays').find('.check-challenger-plays')
+      challengerPlays = $('#challenger-plays').find('img')
       console.log(challengerPlays.length)
       i = 0
       while i < challengerPlays.length
